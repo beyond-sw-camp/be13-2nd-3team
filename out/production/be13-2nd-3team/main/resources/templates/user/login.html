@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>yyGang-login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        /* 기본 페이지 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h3 {
+            color: #0056b3;
+        }
+
+        /* 로그인 폼 스타일 */
+        .login-form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+        }
+
+        .login-form h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 12px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #003f7f;
+        }
+
+        .form-footer {
+            margin-top: 20px;
+            display: flex; /* flexbox로 설정 */
+            justify-content: space-around; /* 버튼 사이의 간격을 자동으로 맞춤 */
+            gap: 10px; /* 버튼 사이에 여백 추가 */
+            text-align: center;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1>영양갱</h1>
+<div class="login-form">
+    <h2>로그인</h2>
+    <form action="/user/login" method="post">
+        <label for="userId">아이디</label>
+        <input type="text" name="username" id="userId" required />
+
+        <label for="userPwd">패스워드</label>
+        <input type="password" name="password" id="userPwd" required />
+
+        <input type="submit" value="로그인">
+    </form>
+
+    <div class="form-footer">
+        <form action="/user/find_id" method="get">
+            <button type="submit">아이디 찾기</button>
+        </form>
+        <form action="/user/find_password" method="get">
+            <button type="submit">비밀번호 찾기</button>
+        </form>
+        <form action="/user/join" method="get">
+            <button type="submit">회원가입</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

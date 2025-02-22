@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>yyGang-join</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h3>영양갱</h3>
+
+    <p>
+    <h3>회원 가입</h3>
+    <form action="/user/join" th:object="${userJoinDTO}" method="post">
+        <table>
+            <tr>
+                <th><label for="email">이메일</label></th>
+                <td><input type="text" id="email" name="email" placeholder="aaaa@beyond.com" required/></td>
+            </tr>
+            <tr>
+                <th><label for="userPwd">비밀번호</label></th>
+                <td><input type="password" id="userPwd" name="userPwd" placeholder="비밀번호" required/></td>
+            </tr>
+            <tr>
+                <th><label for="userPwd2">비밀번호 확인</label></th>
+                <td><input type="password" id="userPwd2" name="userPwd2" placeholder="비밀번호 확인" /></td>
+            </tr>
+            <tr>
+                <th><label for="userName">이름</label></th>
+                <td><input type="text" id="userName" name="name" placeholder="이름을 입력하세요." required></td>
+            </tr>
+            <tr>
+                <th><label for="phone">휴대전화</label></th>
+                <td><input type="text" id="phone" name="phone" placeholder="(-없이)01011112222" maxlength="11"></td>
+            </tr>
+            <tr>
+                <th><label for="address">주소</label></th>
+                <td><input type="text" id="address" name="address"></td>
+            </tr>
+
+            <tr>
+                <th>성별</th>
+                <td>
+                    <label><input type="radio" name="gender" value="Male">남자</label>
+                    <label><input type="radio" name="gender" value="Female">여자</label>
+                </td>
+            </tr>
+            <tr>
+                <th>건강 관심사</th>
+                <td>
+                    <label><input type="checkbox" name="health" value="eye">눈건강</label>
+                    <label><input type="checkbox" name="health" value="등산">간건강</label>
+                    <label><input type="checkbox" name="health" value="독서">피로</label>
+                    <label><input type="checkbox" name="health" value="독서">혈행개선</label>
+                    <br>
+                    <label><input type="checkbox" name="health" value="게임">피부건강</label>
+                    <label><input type="checkbox" name="health" value="여행">체지방</label>
+                    <label><input type="checkbox" name="health" value="여행">장건강</label>
+                    <label><input type="checkbox" name="health" value="여행">스트레스&수면</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="가입">
+                    <input type="reset" value="초기화">
+                </td>
+            </tr>
+        </table>
+    </form>
+    </p>
+
+</body>
+</html>
